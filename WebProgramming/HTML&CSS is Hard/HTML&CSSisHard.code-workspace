@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "[3]Hello, CSS"
+		},
+		{
+			"path": "[4]CSS Box Model"
 		}
 	]
 }
