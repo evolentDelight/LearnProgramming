@@ -1,0 +1,12 @@
+Ways to initialize functions after website loads:
+1. <body onload="function()" ...
+2. window.onload = function;
+      Also: onload = function(){
+         //Add as many function in here
+        };
+3. window.addEventListener('load', function (){
+    function();//Call function
+});
+4. document.addEventListener("DOMContentLoaded", function);
+
+https://javascript.info/onload-ondomcontentloaded
