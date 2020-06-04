@@ -20,11 +20,15 @@ fetch('https://www.metaweather.com/api/location/search/?query=san francisco',
     )
 //fetch returns a promise first
 */
-/*
+
 //WORKING
 var Obj1;
+var Obj2;
 
 function useData(data){
+    Obj2 = data;
+    console.log("useData -> Obj2", Obj2)
+    
     document.getElementById("output").innerHTML = data[0].title;
 }
 
@@ -41,9 +45,17 @@ async function main(){
 }
 
 main();
-*/
 
-async function main(/*Query/Request string can be inserted here*/ string){
+console.log("Without waiting Obj2: ", Obj2);
+//Does not work because it is returned immediately with a "callback" flag ON
+//Once the callback is called, then the Obj2 is assigned.
+
+setTimeout(() => {console.log("After waiting Obj2: ", Obj2)}, 3000);
+//The Obj2 is now populated because the function had the chance to wait for the returned value
+
+/*
+var Obj2;//Does not work because definition and initialization are done within async
+async function main(/*Query/Request string can be inserted here string){
     var Obj1;
 
     await fetch('https://www.metaweather.com/api/location/search/?query=' + String(string))
@@ -56,10 +68,17 @@ async function main(/*Query/Request string can be inserted here*/ string){
 
     out += Obj1[0].title + "'s ID: " + Obj1[0].woeid;
 
+    console.log("Obj1: ", Obj1);
+    Obj2 = Obj1;
+    console.log("main -> Obj2", Obj2)
+
     document.getElementById("output").innerHTML = out;
 
 }
 
+console.log("Ojb2", Obj2);
+
 let string = "san francisco"
 
 main(string);
+*/
