@@ -1,0 +1,21 @@
+.container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+input{
+  margin: 2.5px;
+}
+
+div{
+  text-align: center;
+}
+
+.hide{
+  display : none;
+}
+
+.reveal{
+  display : block;
+}
